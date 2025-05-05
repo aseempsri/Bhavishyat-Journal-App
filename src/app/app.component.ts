@@ -130,7 +130,10 @@ export class AppComponent {
     XLSX.utils.book_append_sheet(wb, ws, 'Journal');
     const excelBuffer: any = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
     const safeName = this.userName ? this.userName.replace(/[^a-zA-Z0-9]/g, '_') : 'journal';
-    saveAs(new Blob([excelBuffer], { type: 'application/octet-stream' }), `${safeName}'s journal entry_${today}.xlsx`);
+    saveAs(
+      new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }),
+      `${safeName}'s journal entry_${today}.xlsx`
+    );
   }
 
   refreshFields() {
