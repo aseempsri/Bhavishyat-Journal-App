@@ -30,5 +30,12 @@ jobs:
         with:
           folder: docs
           branch: gh-pages
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs
+          branch: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} 
