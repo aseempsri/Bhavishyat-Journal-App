@@ -30,8 +30,6 @@
         <ng-container *ngIf="question !== 'Today\'s experience overall'; else radioBlock">
           <div class="slider-row" *ngIf="isBrowser">
             <ngx-slider [(value)]="answers[question].value" [options]="sliderOptions"></ngx-slider>
-            <span class="slider-value" [ngStyle]="{ color: getSliderColor(answers[question].value) }">{{
-              answers[question].value }}</span>
           </div>
           <div class="slider-row" *ngIf="!isBrowser">
             <input type="number" [(ngModel)]="answers[question].value" [name]="question + '_value'" min="1" max="10"
@@ -123,13 +121,13 @@
   .slider-row {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 8px;
     margin-bottom: 10px;
   }
 
   ngx-slider {
-    flex: 1;
-    margin-right: 16px;
+    width: 50px !important;
+    margin-right: 0;
   }
 
   .slider-value {
@@ -141,11 +139,11 @@
   }
 
   .number-input {
-    width: 60px;
-    padding: 8px;
+    width: 50px;
+    padding: 6px;
     border: 2px solid #e9ecef;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: center;
   }
 
