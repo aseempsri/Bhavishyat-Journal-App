@@ -1,3 +1,5 @@
+# Trigger workflow redeploy
+
 name: Deploy to GitHub Pages
 
 on:
@@ -27,4 +29,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
-          branch: gh-pages 
+          branch: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} 
