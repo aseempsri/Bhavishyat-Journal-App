@@ -17,7 +17,7 @@ const QUESTION_LIST = [
   'My day with my colleague (optional)',
   'My day with my spouse (optional)',
   'My driving experience TO office (optional)',
-  'My driving experience FROM office (optional)',
+  'My driving experience to home (optional)',
   'My day with my kids (optional)',
   'My day with my house help (optional)',
   'Was I happy and satisfied with how I spent my ideal time',
