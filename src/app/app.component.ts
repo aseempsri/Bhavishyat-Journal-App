@@ -13,11 +13,13 @@ interface JournalEntry {
 const QUESTION_LIST = [
   "My previous night's sleep",
   'Easiness of leaving the bed',
-  'My day with my boss',
-  'My day with my colleague',
-  'My day with my wife',
-  'My driving experience TO office',
-  'My driving experience FROM office',
+  'My day with my boss (optional)',
+  'My day with my colleague (optional)',
+  'My day with my spouse (optional)',
+  'My driving experience TO office (optional)',
+  'My driving experience FROM office (optional)',
+  'My day with my kids (optional)',
+  'My day with my house help (optional)',
   'Was I happy and satisfied with how I spent my ideal time',
   "Today's experience overall",
 ];
@@ -80,6 +82,8 @@ export class AppComponent {
     for (const q of this.questions) {
       if (q === RADIO_QUESTION) {
         this.answers[q] = { value: '', comment: '' };
+      } else if (q.includes('(optional)')) {
+        this.answers[q] = { value: 0, comment: '' };
       } else {
         this.answers[q] = { value: 5, comment: '' };
       }
